@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: template
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    platform: linux/amd64
