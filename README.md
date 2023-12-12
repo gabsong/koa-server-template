@@ -1,6 +1,6 @@
 # Server Template
 
-Starter code for an API backend with a working DB connection.
+Starter code for an API backend with a working MySQL DB connection.
 
 `main.ts` is the entry point for a koa.js API server.
 `worker.ts` is a standalone function that tests writing into the database.
@@ -23,10 +23,10 @@ Write tests with [Vitest](https://vitest.dev/).
 
 1. Run `volta pin node@20 npm@10` to set the node and npm versions.
 1. Install dependencies with `npm install` (or `npm i`).
-1. Set up the docker containers with `docker-compose up -d`.
-1. Create a database migration with `npx knex migrate:make create_example_table` (edit command).
-1. Run the database migrations to create the tables `DATABASE_URL=xxxx npm run db:migrate` (replace 'xxxx' with value).
-1. You can use the rollback command as a way to clear loaded data: `DATABASE_URL=xxxx npm run db:rollback` (replace 'xxxx' with value).
+1. Set up a MySQL docker container with `docker-compose up -d`.
+1. Create a database migration with `npx knex migrate:make migration_name` (edit migration_name).
+1. Run the database migrations to create the tables `DATABASE_URL=xxxx npm run db:migrate` (i.e. DATABASE_URL=mysql://root:password@127.0.0.1:3306/template).
+1. You can use the rollback command as a way to clear loaded data: `DATABASE_URL=xxxx npm run db:rollback`.
 
 ### Run
 
